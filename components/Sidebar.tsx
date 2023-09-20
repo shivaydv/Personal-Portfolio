@@ -16,11 +16,11 @@ const Sidebar = () => {
                 <User2/> About
               
             </List>
-            <List link="/"  >
+            <List link="/contact"  >
             <MessagesSquare /> Contact
             </List>
-            <List link="/"  >
-                <PenSquare/> Blog
+            <List link="/blogs"  >
+                <PenSquare/> Blogs
             </List>
 
             <h1 className="py-4">Social</h1>
@@ -28,17 +28,17 @@ const Sidebar = () => {
             <List link="https://www.instagram.com/shivay1256/" target="_blank" >
                 <Instagram color="#E4405F"/> Instagram
             </List>
-            <List link="/"  >
+            <List link="https://www.linkedin.com/in/shivaydv/" target="_blank" >
                 <Linkedin color="#0A66C2"/> Linkedin
             </List>
             
-            <List link="/"  >
+            <List link="https://github.com/Shivaydv/" target="_blank"  >
                 <Github color="#3AAF85"/> Github
             </List>
-            <List link="/"  >
+            <List link="/" target="_blank" >
                 <Youtube color="#CD201F"/> Youtube
             </List>
-            <List link="/"  >
+            <List link="https://twitter.com/Shivay1256" target="_blank"  >
                 <Twitter color="#1DA1F2"/> Twitter
             </List>
            
