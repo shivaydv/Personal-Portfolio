@@ -25,20 +25,20 @@ const Sidebar = () => {
 
             <h1 className="py-4">Social</h1>
 
-            <List link="https://www.instagram.com/shivay1256/" target="_blank" >
+            <List link="https://www.instagram.com/shivay1256/" target="blank" >
                 <Instagram color="#E4405F"/> Instagram
             </List>
-            <List link="https://www.linkedin.com/in/shivaydv/" target="_blank" >
+            <List link="https://www.linkedin.com/in/shivaydv/" target="blank" >
                 <Linkedin color="#0A66C2"/> Linkedin
             </List>
             
-            <List link="https://github.com/Shivaydv/" target="_blank"  >
+            <List link="https://github.com/Shivaydv/" target="blank"  >
                 <Github color="#3AAF85"/> Github
             </List>
             <List link="/" target="_blank" >
                 <Youtube color="#CD201F"/> Youtube
             </List>
-            <List link="https://twitter.com/Shivay1256" target="_blank"  >
+            <List link="https://twitter.com/Shivay1256" target="blank"  >
                 <Twitter color="#1DA1F2"/> Twitter
             </List>
            
