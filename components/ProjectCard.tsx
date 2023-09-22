@@ -20,7 +20,7 @@ const ProjectCard:React.FC<projectCardProps> = ({name,icon,link,techstack,color}
             </section>
             <section className="space-y-1 flex-1">
                 <h1 className="text-white font-semibold">{name}</h1>
-                <p className="text-sm">{techstack}</p>
+                <p className="text-sm md:text-xs">{techstack}</p>
             </section>
 
         </Link>

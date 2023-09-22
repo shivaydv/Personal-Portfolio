@@ -1,10 +1,11 @@
 import {Home,User2,MessagesSquare,Twitter,Youtube,Linkedin,Github,Instagram,PenSquare,  Bitcoin, CloudMoon, Store, ListTodo} from "lucide-react";
 import List from "@/components/List";
 
+
 const Sidebar = () => {
     return ( 
         <div className="w-full md:p-1 ">
-
+            
         <div className="w-full flex flex-col gap-1 md:p-6 bg-secondaryBackground h-full rounded-lg md:overflow-y-scroll ">
 
             {/* Basic Routes  */}

@@ -9,14 +9,14 @@ interface projectDataProps{
     color:string;
 }
 export const projectdata:projectDataProps[] = [
-    {
-        id:0,
-        name:"Portfolio",     
-        link:'https://github.com/shivaydv/Personal-Portfolio',
-        icon:Briefcase,
-        techstack:`NextJS, TypeScript, Tailwind CSS, React, Shadcn `,
-        color:'#6A00FF' ,
-    },
+    // {
+    //     id:0,
+    //     name:"Portfolio",     
+    //     link:'https://github.com/shivaydv/Personal-Portfolio',
+    //     icon:Briefcase,
+    //     techstack:`NextJS, TypeScript, Tailwind CSS, React, Shadcn `,
+    //     color:'#6A00FF' ,
+    // },
     {
         id:1,
         name:"Chat App",     
@@ -66,5 +66,89 @@ export const projectdata:projectDataProps[] = [
         color:'#F0A30A' ,
     },
     
+    
+]
+
+
+export interface skillProps{
+    id : number;
+    name:string;
+    src:string;
+}
+
+export const frontendData:skillProps[]=[
+    {
+        id:1,
+        name:"HTML & CSS",
+        src:"/frontend/htmlcss.jpeg"
+    },
+    {
+        id:2,
+        name:"Tailwind CSS",
+        src:"/frontend/tailwind.jpg"
+    },
+    {
+        id:3,
+        name:"JavaScript & TypeScript",
+        src:"/frontend/jsts.jpeg"
+    },
+    {
+        id:4,
+        name:"ReactJS",
+        src:"/frontend/react-js.png"
+    },
+    {
+        id:5,
+        name:"Next JS",
+        src:"/frontend/nextjs13.jpeg"
+    }
+
+]
+export const backendData:skillProps[]=[
+    {
+        id:1,
+        name:"Node JS",
+        src:"/backend/nodejs.webp"
+    },
+    {
+        id:2,
+        name:"Express JS",
+        src:"/backend/express.png"
+    }
+
+]
+
+export const database:skillProps[]=[
+    {
+        id:1,
+        name:"MYSQL",
+        src:"/database/mysql.jpeg"
+    },
+    {
+        id:2,
+        name:"MongoDB",
+        src:"/database/mongo.png"
+    }
+]
+
+export const devops:skillProps[]=[
+    {
+        id:1,
+        name:"Git",
+        src:"/devops/git.png"
+    },
+    {
+        id:2,
+        name:"Docker",
+        src:"/devops/docker.webp"
+    }
+]
+
+export const others:skillProps[]=[
+    {
+        id:1,
+        name:"REST Api",
+        src:"/others/restapi2.png"
+    },
     
 ]

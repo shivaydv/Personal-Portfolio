@@ -17,7 +17,7 @@ module.exports = {
     },
     extend: {
       backgroundImage:{
-        "cover":"url('../assets/cover.jpeg')"
+        "cover":"url('../public/cover.jpeg')"
       },
       colors: {
 
