@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import BlogLoding from "@/components/BlogLoading";
+
 import { useToast } from "@/components/ui/use-toast";
 import Image from "next/image";
 
@@ -32,7 +32,7 @@ const Blog: React.FC = () => {
   const { toast } = useToast();
 
   const [data, setData] = useState<GraphQLData | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchGraphQLData = async () => {
@@ -45,14 +45,13 @@ const Blog: React.FC = () => {
                   title
                   coverImage
                   slug
-                  brief
                   dateAdded
                 }
               }
             }
           }
         `;
-        setLoading(true);
+        
         const response = await axios.post(
           "https://api.hashnode.com/",
           { query: graphqlQuery },
@@ -81,12 +80,13 @@ const Blog: React.FC = () => {
   return (
     <div className="px-4">
       <h1 className="text-white text-lg py-4 font-semibold">Blogs</h1>
-      <main className="flex flex-col gap-6">
+      <main className="grid grid-cols-1 md:grid-cols-3 gap-6 md:px-4">
+      {loading && <h1>Loading...</h1>}
         {data
-          ? data.data.user.publication.posts.map((post) => (
+          && data.data.user.publication.posts.map((post) => (
               <div
                 key={post.slug}
-                className="flex max-lg:flex-col w-full max-md:p-2 gap-4 justify-center items-center  bg-secondaryBackground  rounded-lg"
+                className="flex flex-col w-full p-3  gap-4 justify-center items-center  bg-secondaryBackground  rounded-lg"
               >
                 <section className="relative aspect-video w-full ">
                   <Image
@@ -96,26 +96,26 @@ const Blog: React.FC = () => {
                     alt={post.title}
                   />
                 </section>
-                <section className="flex justify-between flex-col gap-2 md:pr-4">
-                  <div className="space-y-2  h-full">
-                    <h2 className="text-white font-bold text-xl">
+                <section className="flex justify-between flex-col gap-4">               
+                    <h2 className="text-white font-bold text-lg">
                       {post.title}
                     </h2>
-                    <p className="text-sm">{post.brief}</p>
-                  </div>
-                  <div className="w-full flex justify-between pt-2 md:pt-6">
+                  <div className="w-full flex justify-between ">
+                  <p className="text-sm">
+                      {new Date(post.dateAdded).toLocaleDateString()}
+                    </p>
                     <Link
                       href={`https://shivaydv.hashnode.dev/${post.slug}`}
                       className="text-base text-green-600"
                     >
-                      Read
+                      Read Now
                     </Link>
-                    <p className="text-sm">{new Date(post.dateAdded).toLocaleDateString()}</p>
+                    
                   </div>
                 </section>
               </div>
             ))
-          : loading && <BlogLoding />}
+         } 
       </main>
 
       <div className="flex justify-center items-center w-full my-8 ">

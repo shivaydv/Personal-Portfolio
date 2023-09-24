@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/toaster";
+import { MenuProvider } from "@/context/MenuProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className} >
         <div className=" bg-primaryBackground text-primaryText overflow-x-hidden">
+          <MenuProvider>
+
           <aside className="hidden md:flex md:fixed  md:left-0 md:top-0 h-screen md:w-72 p-2">
             <Sidebar />
           </aside>
@@ -30,6 +33,7 @@ export default function RootLayout({
           {children}
           </main>
           <Toaster/>
+          </MenuProvider>
         </div>
       </body>
     </html>
