@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 
-import { useToast } from "@/components/ui/use-toast";
+
 import Image from "next/image";
 
 interface Post {
@@ -29,7 +29,6 @@ interface GraphQLData {
 }
 
 const Blog: React.FC = () => {
-  const { toast } = useToast();
 
   const [data, setData] = useState<GraphQLData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -66,11 +65,7 @@ const Blog: React.FC = () => {
         setLoading(false);
       } catch (error) {
         setLoading(false);
-        toast({
-          variant: "destructive",
-          title: "Uh oh! Something went wrong.",
-          description: "There was a problem with your request.",
-        });
+       
       }
     };
 
